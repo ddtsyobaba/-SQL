@@ -8,8 +8,8 @@ FROM
 ;
 
 修正点
-①SELECTS→SELECTに修正しました。
-②titleの右に,を追加しました。
+①1行目のSELECTS→SELECTに修正しました。
+②2行目のtitleの右に,を追加しました。
 
 実行結果
 
