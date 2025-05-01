@@ -7,7 +7,7 @@ SELECT
 FROM
 	quest
 WHERE
-	age BETWEEN 30 AND 40
+	age BETWEEN 30 AND 39
 ;
 
 実行結果
@@ -18,16 +18,16 @@ MariaDB [workbook]> SELECT
     -> FROM
     -> quest
     -> WHERE
-    -> age BETWEEN 30 AND 40
+    -> age BETWEEN 30 AND 39
     -> ;
 +------------+-----+------------+
 | name       | sex | prefecture |
 +------------+-----+------------+
 | 山田太郎   | 男  | 東京都     |
 | 江本修子   | 女  | 東京都     |
-| 小野博美   | 女  | 神奈川県   |
 | 有木守     | 男  | 千葉県     |
 | 南幸一     | 男  | 神奈川県   |
 | 根岸亜由美 | 女  | 千葉県     |
 +------------+-----+------------+
-6 rows in set (0.00 sec)
+5 rows in set (0.00 sec)
+
