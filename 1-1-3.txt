@@ -1,4 +1,4 @@
-ƒNƒGƒŠ
+ã‚¯ã‚¨ãƒª
 
 SELECT
 	*
@@ -6,7 +6,7 @@ FROM
 	sales
 ;
 
-ŽÀsŒ‹‰Ê
+å®Ÿè¡Œçµæžœ
 
 MariaDB [workbook]> SELECT
     -> *
