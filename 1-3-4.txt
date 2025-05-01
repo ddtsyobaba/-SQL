@@ -1,0 +1,30 @@
+クエリ
+
+SELECT DISTINCT
+	class
+FROM
+	employee
+;
+
+修正点
+①1行目のSELECT ALLからSELECT DISTINCTに修正しました。
+②3行目に記載してあったdepart_idを削除しました。
+
+実行結果
+
+MariaDB [workbook]> SELECT DISTINCT
+    -> class
+    -> FROM
+    -> employee
+    -> ;
++--------------+
+| class        |
++--------------+
+| 部長         |
+| 担当         |
+| 主任         |
+| アシスタント |
+| 課長         |
++--------------+
+5 rows in set (0.00 sec)
+
