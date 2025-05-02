@@ -1,4 +1,4 @@
-ƒNƒGƒŠ
+ã‚¯ã‚¨ãƒª
 
 SELECT
 	page_id,
@@ -9,11 +9,11 @@ GROUP BY
 	page_id
 ;
 
-C³“_
-‡@3s–Ú‚ÌSUM‚ğCOUNT‚ÉC³‚µ‚Ü‚µ‚½B
-‡A6s–Ú‚ÌORDER BY‚ğGROUP BY‚ÉC³‚µ‚Ü‚µ‚½B
+ä¿®æ­£ç‚¹
+â‘ 3è¡Œç›®ã®SUMã‚’COUNTã«ä¿®æ­£ã—ã¾ã—ãŸã€‚
+â‘¡6è¡Œç›®ã®ORDER BYã‚’GROUP BYã«ä¿®æ­£ã—ã¾ã—ãŸã€‚
 
-ÀsŒ‹‰Ê
+å®Ÿè¡Œçµæœ
 
 MariaDB [workbook]> SELECT
     -> page_id,

@@ -1,29 +1,29 @@
-ƒNƒGƒŠ
+ã‚¯ã‚¨ãƒª
 
 SELECT
-	publish AS o”ÅŽÐ,
-	AVG(price) AS •½‹Ï‰¿Ši
+	publish AS å‡ºç‰ˆç¤¾,
+	AVG(price) AS å¹³å‡ä¾¡æ ¼
 FROM
 	books
 GROUP BY
 	publish
 ;
 
-ŽÀsŒ‹‰Ê
+å®Ÿè¡Œçµæžœ
 MariaDB [workbook]> SELECT
-    -> publish AS o”ÅŽÐ,
-    -> AVG(price) AS •½‹Ï‰¿Ši
+    -> publish AS å‡ºç‰ˆç¤¾,
+    -> AVG(price) AS å¹³å‡ä¾¡æ ¼
     -> FROM
     -> books
     -> GROUP BY
     -> publish
     -> ;
 +--------------+-----------+
-| o”ÅŽÐ       | •½‹Ï‰¿Ši  |
+| å‡ºç‰ˆç¤¾       | å¹³å‡ä¾¡æ ¼  |
 +--------------+-----------+
-| ŽR“co”Å     | 2157.1429 |
-| G˜aƒVƒXƒeƒ€ | 2400.0000 |
-| “úŒoBP       | 2433.3333 |
-| ãÄ‰jŽÐ       | 3150.0000 |
+| å±±ç”°å‡ºç‰ˆ     | 2157.1429 |
+| ç§€å’Œã‚·ã‚¹ãƒ†ãƒ  | 2400.0000 |
+| æ—¥çµŒBP       | 2433.3333 |
+| ç¿”æ³³ç¤¾       | 3150.0000 |
 +--------------+-----------+
 4 rows in set (0.00 sec)
