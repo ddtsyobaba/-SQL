@@ -1,0 +1,36 @@
+クエリ
+
+SELECT
+	prefecture,
+	MAX(age)
+FROM
+	quest
+WHERE
+	sex = '男'
+GROUP BY
+	prefecture
+HAVING
+	MAX(age)>60
+;
+
+実行結果
+
+MariaDB [workbook]> SELECT
+    -> prefecture,
+    -> MAX(age)
+    -> FROM
+    -> quest
+    -> WHERE
+    -> sex = '男'
+    -> GROUP BY
+    -> prefecture
+    -> HAVING
+    -> MAX(age)>60
+    -> ;
++------------+----------+
+| prefecture | MAX(age) |
++------------+----------+
+| 茨城県     |       64 |
++------------+----------+
+1 row in set (0.00 sec)
+
