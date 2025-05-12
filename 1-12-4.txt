@@ -3,13 +3,12 @@
 SELECT
 	publish,
 	COUNT(category_id),
-	title
+	category_id
 FROM
 	books
 GROUP BY
 	publish,
-	category_id,
-	title
+	category_id
 HAVING
 	COUNT(category_id)<3
 ;
@@ -18,32 +17,27 @@ HAVING
 MariaDB [workbook]> SELECT
     -> publish,
     -> COUNT(category_id),
-    -> title
+    -> category_id
     -> FROM
     -> books
     -> GROUP BY
     -> publish,
-    -> category_id,
-    -> title
+    -> category_id
     -> HAVING
     -> COUNT(category_id)<3
     -> ;
-+--------------+--------------------+------------------+
-| publish      | COUNT(category_id) | title            |
-+--------------+--------------------+------------------+
-| 山田出版     |                  1 | あひるの観察日記 |
-| 山田出版     |                  1 | かえるの観察日記 |
-| 山田出版     |                  1 | PHPドリル        |
-| 山田出版     |                  1 | SQL入門          |
-| 山田出版     |                  1 | らくだの観察日記 |
-| 山田出版     |                  1 | ハムスターの観察 |
-| 山田出版     |                  1 | フェレットの観察 |
-| 秀和システム |                  1 | JSPリファレンス  |
-| 秀和システム |                  1 | PHP5サンプル集   |
-| 日経BP       |                  1 | SQLプチブック    |
-| 日経BP       |                  1 | SQLリファレンス  |
-| 日経BP       |                  1 | XMLリファレンス  |
-| 翔泳社       |                  1 | PEAR入門         |
-| 翔泳社       |                  1 | XML辞典          |
-+--------------+--------------------+------------------+
-14 rows in set (0.00 sec)
++--------------+--------------------+-------------+
+| publish      | COUNT(category_id) | category_id |
++--------------+--------------------+-------------+
+| 山田出版     |                  1 | A9999       |
+| 山田出版     |                  1 | H9999       |
+| 山田出版     |                  1 | P1111       |
+| 山田出版     |                  1 | S2222       |
+| 秀和システム |                  1 | J4444       |
+| 秀和システム |                  1 | P1111       |
+| 日経BP       |                  2 | S2222       |
+| 日経BP       |                  1 | X3333       |
+| 翔泳社       |                  1 | P1111       |
+| 翔泳社       |                  1 | X3333       |
++--------------+--------------------+-------------+
+10 rows in set (0.00 sec)
