@@ -6,7 +6,8 @@ SELECT
 FROM
 	books
 GROUP BY
-	publish
+	publish,
+	category_id
 HAVING
 	COUNT(category_id)<3
 ;
@@ -18,15 +19,24 @@ MariaDB [workbook]> SELECT
     -> FROM
     -> books
     -> GROUP BY
-    -> publish
+    -> publish,
+    -> category_id
     -> HAVING
     -> COUNT(category_id)<3
     -> ;
 +--------------+--------------------+
 | publish      | COUNT(category_id) |
 +--------------+--------------------+
-| 秀和システム |                  2 |
-| 翔泳社       |                  2 |
+| 山田出版     |                  1 |
+| 山田出版     |                  1 |
+| 山田出版     |                  1 |
+| 山田出版     |                  1 |
+| 秀和システム |                  1 |
+| 秀和システム |                  1 |
+| 日経BP       |                  2 |
+| 日経BP       |                  1 |
+| 翔泳社       |                  1 |
+| 翔泳社       |                  1 |
 +--------------+--------------------+
-2 rows in set (0.00 sec)
+10 rows in set (0.00 sec)
 
