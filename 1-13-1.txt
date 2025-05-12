@@ -2,7 +2,7 @@
 
 SELECT
 	name AS 氏名,
-CASE
+	CASE
 	answer1
 	WHEN 3 THEN 'ためになった'
 	WHEN 2 THEN '普通'

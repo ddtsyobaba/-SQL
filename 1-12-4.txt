@@ -2,12 +2,14 @@
 
 SELECT
 	publish,
-	COUNT(category_id)
+	COUNT(category_id),
+	title
 FROM
 	books
 GROUP BY
 	publish,
-	category_id
+	category_id,
+	title
 HAVING
 	COUNT(category_id)<3
 ;
@@ -15,28 +17,33 @@ HAVING
 実行結果
 MariaDB [workbook]> SELECT
     -> publish,
-    -> COUNT(category_id)
+    -> COUNT(category_id),
+    -> title
     -> FROM
     -> books
     -> GROUP BY
     -> publish,
-    -> category_id
+    -> category_id,
+    -> title
     -> HAVING
     -> COUNT(category_id)<3
     -> ;
-+--------------+--------------------+
-| publish      | COUNT(category_id) |
-+--------------+--------------------+
-| 山田出版     |                  1 |
-| 山田出版     |                  1 |
-| 山田出版     |                  1 |
-| 山田出版     |                  1 |
-| 秀和システム |                  1 |
-| 秀和システム |                  1 |
-| 日経BP       |                  2 |
-| 日経BP       |                  1 |
-| 翔泳社       |                  1 |
-| 翔泳社       |                  1 |
-+--------------+--------------------+
-10 rows in set (0.00 sec)
-
++--------------+--------------------+------------------+
+| publish      | COUNT(category_id) | title            |
++--------------+--------------------+------------------+
+| 山田出版     |                  1 | あひるの観察日記 |
+| 山田出版     |                  1 | かえるの観察日記 |
+| 山田出版     |                  1 | PHPドリル        |
+| 山田出版     |                  1 | SQL入門          |
+| 山田出版     |                  1 | らくだの観察日記 |
+| 山田出版     |                  1 | ハムスターの観察 |
+| 山田出版     |                  1 | フェレットの観察 |
+| 秀和システム |                  1 | JSPリファレンス  |
+| 秀和システム |                  1 | PHP5サンプル集   |
+| 日経BP       |                  1 | SQLプチブック    |
+| 日経BP       |                  1 | SQLリファレンス  |
+| 日経BP       |                  1 | XMLリファレンス  |
+| 翔泳社       |                  1 | PEAR入門         |
+| 翔泳社       |                  1 | XML辞典          |
++--------------+--------------------+------------------+
+14 rows in set (0.00 sec)

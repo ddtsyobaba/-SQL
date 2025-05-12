@@ -4,7 +4,7 @@ SELECT
 
 	referer,
 	COUNT(*) AS カウント数,
-CASE
+	CASE
 	WHEN COUNT(*) >=50 THEN 'A'
 	WHEN COUNT(*) >=10 THEN 'B'
 	ELSE 'C'
