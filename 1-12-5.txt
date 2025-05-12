@@ -1,0 +1,41 @@
+クエリ
+
+SELECT
+	depart_id,
+	COUNT(*)
+FROM
+	employee
+WHERE
+	sex=2
+GROUP BY
+	depart_id
+HAVING
+	COUNT(*)>=3
+;
+
+修正点
+・8行目をGROUP BYに修正しました。
+・10行目をHAVINGに修正しました。
+
+実行結果
+
+MariaDB [workbook]> SELECT
+    -> depart_id,
+    -> COUNT(*)
+    -> FROM
+    -> employee
+    -> WHERE
+    -> sex=2
+    -> GROUP BY
+    -> depart_id
+    -> HAVING
+    -> COUNT(*)>=3
+    -> ;
++-----------+----------+
+| depart_id | COUNT(*) |
++-----------+----------+
+| S01       |        4 |
+| S02       |        5 |
++-----------+----------+
+2 rows in set (0.00 sec)
+

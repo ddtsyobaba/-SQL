@@ -1,0 +1,30 @@
+クエリ
+
+SELECT
+	title
+FROM
+	books
+WHERE
+	publish LIKE '%社'
+;
+
+修正点
+①2行目のtitleに付いていたカンマを削除しました。
+②6行目のpublish LIKE '_社'を「社」で終わる情報を取り出すため、publish LIKE '%社'に修正しました。
+
+実行結果
+MariaDB [workbook]> SELECT
+    -> title
+    -> FROM
+    -> books
+    -> WHERE
+    -> publish LIKE '%社'
+    -> ;
++----------+
+| title    |
++----------+
+| XML辞典  |
+| PEAR入門 |
++----------+
+2 rows in set (0.00 sec)
+

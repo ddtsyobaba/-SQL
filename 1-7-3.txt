@@ -1,0 +1,36 @@
+クエリ
+
+SELECT
+	*
+FROM
+	rental
+WHERE
+	returned = 0
+AND
+	rental_date < '2012-12-1'
+ORDER BY
+	rental_date DESC
+;
+
+実行結果
+
+MariaDB [workbook]> SELECT
+    -> *
+    -> FROM
+    -> rental
+    -> WHERE
+    -> returned = 0
+    -> AND
+    -> rental_date < '2012-12-1'
+    -> ORDER BY
+    -> rental_date DESC
+    -> ;
++----+---------+---------------+-------------+----------+
+| id | user_id | isbn          | rental_date | returned |
++----+---------+---------------+-------------+----------+
+| 14 | A200405 | 4-0010-0000-0 | 2012-06-14  |        0 |
+| 10 | B200504 | 4-0010-0000-0 | 2012-03-20  |        0 |
+| 12 | A200402 | 4-8833-0000-2 | 2012-02-22  |        0 |
++----+---------+---------------+-------------+----------+
+3 rows in set (0.00 sec)
+
