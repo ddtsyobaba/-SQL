@@ -9,14 +9,14 @@ SELECT
 	od.quantity AS 購入数
 FROM
 	(
-	(
-		order_main AS om
-	INNER JOIN
-		order_desc AS od
-	ON
-		om.po_id=od.po_id
-	)
+		(
+			order_main AS om
 		INNER JOIN
+			order_desc AS od
+		ON
+			om.po_id=od.po_id
+		)
+	INNER JOIN
 		usr AS u
 	ON
 		om.user_id=u.user_id

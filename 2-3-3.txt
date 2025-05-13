@@ -5,13 +5,12 @@ SELECT
 	CONCAT(el.l_name,el.f_name) AS 上司氏名
 FROM
 	employee as em
-INNER JOIN
+LEFT JOIN
 	employee as el
 ON
 	em.b_id=el.s_id
 ORDER BY
 	em.s_id ASC
-	
 ;
 
 実行結果
@@ -21,7 +20,7 @@ MariaDB [workbook]> SELECT
     -> CONCAT(el.l_name,el.f_name) AS 上司氏名
     -> FROM
     -> employee as em
-    -> INNER JOIN
+    -> LEFT JOIN
     -> employee as el
     -> ON
     -> em.b_id=el.s_id
@@ -31,14 +30,21 @@ MariaDB [workbook]> SELECT
 +------------+------------+
 | 社員氏名   | 上司氏名   |
 +------------+------------+
+| 相沢聡     | NULL       |
 | 大門一郎   | 相沢聡     |
 | 藤井雄太   | 妹尾春樹   |
 | 藤岡幸太郎 | 藤井雄太   |
+| 速水和幸   | NULL       |
 | 葉山俊輔   | 藤岡幸太郎 |
+| 川口裕子   | NULL       |
+| 加藤昭雄   | NULL       |
 | 神田佐知子 | 神田佐知子 |
 | 木村一郎   | 田中真由子 |
 | 中澤康代   | 戸川よしみ |
+| 西雄一     | NULL       |
+| 新渡戸康治 | NULL       |
 | 野上利江   | 戸川よしみ |
+| 佐藤智子   | NULL       |
 | 妹尾春樹   | 寺岡陽一   |
 | 清水春子   | 清水春子   |
 | 田中真由子 | 山田奈美   |
@@ -48,6 +54,7 @@ MariaDB [workbook]> SELECT
 | 遠山真一   | 上田一也   |
 | 戸川よしみ | 津村知美   |
 | 津村知美   | 近田晃子   |
+| 上田一也   | NULL       |
 | 山田奈美   | 佐藤智子   |
 +------------+------------+
-18 rows in set (0.02 sec)
+26 rows in set (0.01 sec)
