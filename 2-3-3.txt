@@ -1,0 +1,53 @@
+クエリ
+
+SELECT
+	CONCAT(em.l_name,em.f_name) AS 社員氏名,
+	CONCAT(el.l_name,el.f_name) AS 上司氏名
+FROM
+	employee as em
+INNER JOIN
+	employee as el
+ON
+	em.b_id=el.s_id
+ORDER BY
+	em.s_id ASC
+	
+;
+
+実行結果
+
+MariaDB [workbook]> SELECT
+    -> CONCAT(em.l_name,em.f_name) AS 社員氏名,
+    -> CONCAT(el.l_name,el.f_name) AS 上司氏名
+    -> FROM
+    -> employee as em
+    -> INNER JOIN
+    -> employee as el
+    -> ON
+    -> em.b_id=el.s_id
+    -> ORDER BY
+    -> em.s_id ASC
+    -> ;
++------------+------------+
+| 社員氏名   | 上司氏名   |
++------------+------------+
+| 大門一郎   | 相沢聡     |
+| 藤井雄太   | 妹尾春樹   |
+| 藤岡幸太郎 | 藤井雄太   |
+| 葉山俊輔   | 藤岡幸太郎 |
+| 神田佐知子 | 神田佐知子 |
+| 木村一郎   | 田中真由子 |
+| 中澤康代   | 戸川よしみ |
+| 野上利江   | 戸川よしみ |
+| 妹尾春樹   | 寺岡陽一   |
+| 清水春子   | 清水春子   |
+| 田中真由子 | 山田奈美   |
+| 田辺正一   | 葉山俊輔   |
+| 寺岡陽一   | 速水和幸   |
+| 近田晃子   | 相沢聡     |
+| 遠山真一   | 上田一也   |
+| 戸川よしみ | 津村知美   |
+| 津村知美   | 近田晃子   |
+| 山田奈美   | 佐藤智子   |
++------------+------------+
+18 rows in set (0.02 sec)
