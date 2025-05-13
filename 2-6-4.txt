@@ -1,0 +1,65 @@
+クエリ
+
+SELECT
+	a.name_kana
+FROM
+	author AS a
+UNION
+SELECT
+	CONCAT(u.l_name_kana,u.f_name_kana)
+FROM
+	usr AS u
+ORDER BY
+	1 DESC
+;
+
+修正点
+・5行目を重複を含んではいけないため、UNIONに修正しました。
+・7行目をCONCAT(u.l_name_kana,u.f_name_kana)に修正しました。
+
+実行結果
+
+MariaDB [workbook]> SELECT
+    -> a.name_kana
+    -> FROM
+    -> author AS a
+    -> UNION
+    -> SELECT
+    -> CONCAT(u.l_name_kana,u.f_name_kana)
+    -> FROM
+    -> usr AS u
+    -> ORDER BY
+    -> 1 DESC
+    -> ;
++------------------+
+| name_kana        |
++------------------+
+| ワダシュウコ     |
+| ヨシオカハルカ   |
+| ヤマダヨシヒロ   |
+| ヤマダタロウ     |
+| ヤマダアイコ     |
+| ヤグチアユミ     |
+| モリモトエリ     |
+| モリグチヤスオ   |
+| ムライサチコ     |
+| ミナミサエ       |
+| マツモトヒロミ   |
+| ネギシユウコ     |
+| ニシジマフミコ   |
+| タナカタロウ     |
+| サトウイチロウ   |
+| サカグチシュン   |
+| コダマツヨシ     |
+| クボタマモル     |
+| キノシタカズキ   |
+| カワナカトモキ   |
+| カワイヤスハル   |
+| オノユウジ       |
+| エモトサトシ     |
+| ウエハラコウイチ |
+| イノウエイチロウ |
+| アリヨシハルミ   |
+| アリキマリ       |
++------------------+
+27 rows in set (0.010 sec)
