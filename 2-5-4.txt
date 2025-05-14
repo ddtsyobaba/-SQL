@@ -1,0 +1,49 @@
+クエリ
+
+SELECT
+	l_name,
+	f_name
+FROM
+	usr
+WHERE
+	NOT EXISTS
+	(
+	SELECT
+		id,
+		rental_date
+	FROM
+		rental
+	WHERE
+		rental.user_id=usr.user_id
+	)
+;
+
+
+実行結果
+
+MariaDB [workbook]> SELECT
+    -> l_name,
+    -> f_name
+    -> FROM
+    -> usr
+    -> WHERE
+    -> NOT EXISTS
+    -> (
+    -> SELECT
+    -> id,
+    -> rental_date
+    -> FROM
+    -> rental
+    -> WHERE
+    -> rental.user_id=usr.user_id
+    -> )
+    -> ;
++--------+--------+
+| l_name | f_name |
++--------+--------+
+| 久保田 | 守     |
+| 児玉   | 毅     |
+| 矢口   | 亜由美 |
+| 村井   | 佐知子 |
++--------+--------+
+4 rows in set (0.00 sec)

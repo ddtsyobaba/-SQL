@@ -1,0 +1,50 @@
+クエリ
+
+SELECT
+	answer1,
+	answer2
+FROM
+	quest
+WHERE
+	age >
+	(
+		SELECT
+			AVG(age)
+		FROM
+			quest
+	)
+ORDER BY
+	answer1 ASC
+;
+
+実行結果
+
+MariaDB [workbook]> SELECT
+    -> answer1,
+    -> answer2
+    -> FROM
+    -> quest
+    -> WHERE
+    -> age >
+    -> (
+    -> SELECT
+    -> AVG(age)
+    -> FROM
+    -> quest
+    -> )
+    -> ORDER BY
+    -> answer1 ASC
+    -> ;
++---------+--------------------+
+| answer1 | answer2            |
++---------+--------------------+
+|       1 | NULL               |
+|       2 | わかりやすいです。 |
+|       2 | NULL               |
+|       2 |                    |
+|       3 | 買ってよかった。   |
+|       3 | 文字が小さい。     |
+|       3 | 絵がかわいい。     |
++---------+--------------------+
+7 rows in set (0.00 sec)
+	
