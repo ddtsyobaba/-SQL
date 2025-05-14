@@ -8,7 +8,7 @@ WHERE
 	sex='女'
 UNION ALL
 SELECT
-	CONCAT(e.l_name,e.f_name)
+	CONCAT(e.l_name_kana,e.f_name_kana)
 FROM
 	employee AS e
 WHERE
@@ -27,7 +27,7 @@ MariaDB [workbook]> SELECT
     -> sex='女'
     -> UNION ALL
     -> SELECT
-    -> CONCAT(e.l_name,e.f_name)
+    -> CONCAT(e.l_name_kana,e.f_name_kana)
     -> FROM
     -> employee AS e
     -> WHERE
@@ -42,16 +42,16 @@ MariaDB [workbook]> SELECT
 | ウエハラハルカ |
 | エモトシュウコ |
 | オノヒロミ     |
+| カワグチユウコ |
+| サトウトモコ   |
+| シミズハルコ   |
+| タナカマユコ   |
+| チカダアキコ   |
+| ツムラカズミ   |
+| トガワヨシミ   |
+| ナカザワヤスヨ |
 | ネギシアユミ   |
-| 近田晃子       |
-| 戸川よしみ     |
-| 佐藤智子       |
-| 山田奈美       |
-| 清水春子       |
-| 川口裕子       |
-| 中澤康代       |
-| 津村知美       |
-| 田中真由子     |
-| 野上利江       |
+| ノガミリエ     |
+| ヤマダナミ     |
 +----------------+
-15 rows in set (0.00 sec)
+15 rows in set (0.029 sec)

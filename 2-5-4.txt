@@ -12,7 +12,7 @@ WHERE
 		id,
 		rental_date
 	FROM
-	rental
+		rental
 	WHERE
 		rental.user_id=usr.user_id
 	)

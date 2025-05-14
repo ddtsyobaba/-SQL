@@ -6,7 +6,7 @@ FROM
 	usr AS u
 WHERE
 	u.prefecture='千葉県'
-UNION ALL
+UNION
 SELECT
 	q.name_kana
 FROM
