@@ -3,7 +3,7 @@
 DELETE FROM
 	books
 WHERE
-	category_id='z9999'
+	category_id='Z9999'
 OR
 	category_id IS NULL
 ;
@@ -16,12 +16,14 @@ OR
 MariaDB [workbook]> DELETE FROM
     -> books
     -> WHERE
-    -> category_id='z9999'
+    -> category_id='Z9999'
     -> OR
     -> category_id IS NULL
     -> ;
 Query OK, 3 rows affected (0.006 sec)
 
+MariaDB [workbook]>
+MariaDB [workbook]>
 MariaDB [workbook]> select * from books;
 +---------------+------------------+-------+--------------+--------------+-------------+
 | isbn          | title            | price | publish      | publish_date | category_id |
