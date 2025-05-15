@@ -5,9 +5,9 @@ CREATE INDEX
 ON
 	usr
 	(
-	prefecture,
-	city,
-	o_address
+		prefecture,
+		city,
+		o_address
 	)
 ;
 

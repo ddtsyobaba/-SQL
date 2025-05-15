@@ -1,4 +1,4 @@
-ƒNƒGƒŠ
+ã‚¯ã‚¨ãƒª
 
 CREATE TABLE
 	books
@@ -13,7 +13,7 @@ CREATE TABLE
 	)
 ;
 
-ŽÀsŒ‹‰Ê
+å®Ÿè¡Œçµæžœ
 
 MariaDB [workbook2]> CREATE TABLE
     -> books

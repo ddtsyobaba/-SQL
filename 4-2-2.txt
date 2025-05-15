@@ -5,8 +5,8 @@ CREATE INDEX
 ON
 	order_main
 	(
-	order_date,
-	delivery_date
+		order_date,
+		delivery_date
 	)
 ;
 
