@@ -1,0 +1,42 @@
+クエリ
+
+CREATE TABLE
+	rental
+	(
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		user_id CHAR(7),
+		isbn CHAR(13),
+		rental_date DATE,
+		returned SMALLINT DEFAULT 0
+	)
+;
+
+修正点
+①1行目をCREATE TABLEに修正しました。
+②4行目をid INT AUTO_INCREMENT PRIMARY KEYに修正しました。
+
+実行結果
+
+MariaDB [workbook2]> CREATE TABLE
+    -> rental
+    -> (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> user_id CHAR(7),
+    -> isbn CHAR(13),
+    -> rental_date DATE,
+    -> returned SMALLINT DEFAULT 0
+    -> )
+    -> ;
+Query OK, 0 rows affected (0.020 sec)
+
+MariaDB [workbook2]> show fields from rental;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| user_id     | char(7)     | YES  |     | NULL    |                |
+| isbn        | char(13)    | YES  |     | NULL    |                |
+| rental_date | date        | YES  |     | NULL    |                |
+| returned    | smallint(6) | YES  |     | 0       |                |
++-------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.024 sec)

@@ -1,0 +1,33 @@
+クエリ
+CREATE TABLE
+	order_desc
+	(
+		po_id INT NOT NULL,
+		p_id CHAR(10) NOT NULL,
+		quantity INT,
+		PRIMARY KEY(po_id,p_id)
+	)
+;
+
+実行結果
+
+MariaDB [workbook2]> CREATE TABLE
+    -> order_desc
+    -> (
+    -> po_id INT NOT NULL,
+    -> p_id CHAR(10) NOT NULL,
+    -> quantity INT,
+    -> PRIMARY KEY(po_id,p_id)
+    -> )
+    -> ;
+Query OK, 0 rows affected (0.024 sec)
+MariaDB [workbook2]> show fields from order_desc;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| po_id    | int(11)  | NO   | PRI | NULL    |       |
+| p_id     | char(10) | NO   | PRI | NULL    |       |
+| quantity | int(11)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+3 rows in set (0.024 sec)
+
