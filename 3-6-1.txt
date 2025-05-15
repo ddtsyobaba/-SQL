@@ -3,15 +3,15 @@
 UPDATE
 	employee
 SET
-	depart_id='Z99(未登録)'
+	depart_id='Z99'
 WHERE
 	depart_id
 NOT IN
 	(
-	SELECT
-		depart_id
-	FROM
-		depart
+		SELECT
+			depart_id
+		FROM
+			depart
 	)
 ;
 
@@ -20,7 +20,7 @@ NOT IN
 MariaDB [workbook]> UPDATE
     -> employee
     -> SET
-    -> depart_id='Z99(未登録)'
+    -> depart_id='Z99'
     -> WHERE
     -> depart_id
     -> NOT IN

@@ -7,12 +7,12 @@ SET
 WHERE
 	NOT EXISTS
 	(
-	SELECT
-		*
-	FROM
-		depart
-	WHERE
-		employee.depart_id=depart.depart_id
+		SELECT
+			*
+		FROM
+			depart
+		WHERE
+			employee.depart_id=depart.depart_id
 	)
 ;
 

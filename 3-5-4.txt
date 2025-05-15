@@ -3,7 +3,7 @@
 UPDATE
 	rental
 SET
-	returned='9(紛失)'
+	returned='9'
 WHERE
 	rental_date<'2012-03-31'
 AND
@@ -14,17 +14,15 @@ AND
 MariaDB [workbook]> UPDATE
     -> rental
     -> SET
-    -> returned='9(紛失)'
+    -> returned='9'
     -> WHERE
     -> rental_date<'2012-03-31'
     -> AND
     -> returned=0
     -> ;
-Query OK, 2 rows affected, 2 warnings (0.007 sec)
-Rows matched: 2  Changed: 2  Warnings: 2
+Query OK, 2 rows affected (0.049 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
 
-MariaDB [workbook]>
-MariaDB [workbook]>
 MariaDB [workbook]>
 MariaDB [workbook]> select * from rental;
 +----+---------+---------------+-------------+----------+

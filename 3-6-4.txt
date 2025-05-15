@@ -3,17 +3,17 @@
 UPDATE
 	books
 SET
-	category_id='XXXXX(その他)'
+	category_id='XXXXX'
 WHERE
 	isbn
 IN
 	(
-	SELECT
-		isbn
-	FROM
-		rental
-	WHERE
-		returned='9(紛失)'
+		SELECT
+			isbn
+		FROM
+			rental
+		WHERE
+			returned='9'
 	)
 ;
 
@@ -22,7 +22,7 @@ IN
 MariaDB [workbook]> UPDATE
     -> books
     -> SET
-    -> category_id='XXXXX(その他)'
+    -> category_id='XXXXX'
     -> WHERE
     -> isbn
     -> IN
@@ -32,11 +32,11 @@ MariaDB [workbook]> UPDATE
     -> FROM
     -> rental
     -> WHERE
-    -> returned='9(紛失)'
+    -> returned='9'
     -> )
     -> ;
-Query OK, 2 rows affected, 3 warnings (0.001 sec)
-Rows matched: 2  Changed: 2  Warnings: 3
+Query OK, 2 rows affected (0.012 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
 
 MariaDB [workbook]>
 MariaDB [workbook]>
@@ -59,7 +59,7 @@ MariaDB [workbook]> select * from books;
 | 4-8833-0000-2 | SQLプチブック    |  1600 | 日経BP       | 2010-11-30   | XXXXX       |
 | 4-8833-0000-3 | XMLリファレンス  |  3200 | 日経BP       | 2012-11-24   | X3333       |
 +---------------+------------------+-------+--------------+--------------+-------------+
-14 rows in set (0.001 sec)
+14 rows in set (0.000 sec)
 
 
 
