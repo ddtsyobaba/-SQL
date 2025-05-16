@@ -1,0 +1,44 @@
+クエリ
+
+ALTER TABLE
+	employee
+ADD
+	email VARCHAR(255) NOT NULL
+AFTER
+	depart_id
+;
+
+修正点
+①3行目をADDに修正しました。
+②5行目をAFTERに修正しました。
+
+実行結果
+
+MariaDB [workbook]> ALTER TABLE
+    -> employee
+    -> ADD
+    -> email VARCHAR(255) NOT NULL
+    -> AFTER
+    -> depart_id
+    -> ;
+Query OK, 0 rows affected (0.011 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [workbook]> show fields from employee;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| s_id        | char(7)      | NO   | PRI |         |       |
+| l_name      | varchar(20)  | YES  |     | NULL    |       |
+| f_name      | varchar(20)  | YES  |     | NULL    |       |
+| l_name_kana | varchar(100) | YES  |     | NULL    |       |
+| f_name_kana | varchar(100) | YES  |     | NULL    |       |
+| sex         | smallint(6)  | YES  |     | NULL    |       |
+| class       | varchar(20)  | YES  |     | NULL    |       |
+| depart_id   | char(3)      | YES  |     | NULL    |       |
+| email       | varchar(255) | NO   |     | NULL    |       |
+| b_id        | char(7)      | YES  |     | NULL    |       |
+| last_update | date         | YES  |     | NULL    |       |
+| retired     | smallint(6)  | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+12 rows in set (0.022 sec)

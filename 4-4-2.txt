@@ -1,0 +1,39 @@
+クエリ
+
+ALTER TABLE
+	employee
+MODIFY
+	l_name VARCHAR(50) NOT NULL,
+MODIFY
+	f_name VARCHAR(50) NOT NULL
+;
+
+実行結果
+
+MariaDB [workbook]> ALTER TABLE
+    -> employee
+    -> MODIFY
+    -> l_name VARCHAR(50) NOT NULL,
+    -> MODIFY
+    -> f_name VARCHAR(50) NOT NULL
+    -> ;
+Query OK, 0 rows affected (0.069 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [workbook]> show fields from employee;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| s_id        | char(7)      | NO   | PRI |         |       |
+| l_name      | varchar(50)  | NO   |     | NULL    |       |
+| f_name      | varchar(50)  | NO   |     | NULL    |       |
+| l_name_kana | varchar(100) | YES  |     | NULL    |       |
+| f_name_kana | varchar(100) | YES  |     | NULL    |       |
+| sex         | smallint(6)  | YES  |     | NULL    |       |
+| class       | varchar(20)  | YES  |     | NULL    |       |
+| depart_id   | char(3)      | YES  |     | NULL    |       |
+| b_id        | char(7)      | YES  |     | NULL    |       |
+| last_update | date         | YES  |     | NULL    |       |
+| retired     | smallint(6)  | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+11 rows in set (0.021 sec)

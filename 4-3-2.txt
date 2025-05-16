@@ -1,0 +1,51 @@
+クエリ
+
+CREATE TABLE
+	sales
+	(
+		s_id CHAR(5) NOT NULL,
+		s_date DATE NOT NULL,
+		s_value INT DEFAULT 0
+	)
+;
+ALTER TABLE
+	sales
+ADD
+	PRIMARY KEY(s_id,s_date)
+;
+
+実行結果
+
+MariaDB [workbook2]> CREATE TABLE
+    -> sales
+    -> (
+    -> s_id CHAR(5) NOT NULL,
+    -> s_date DATE NOT NULL,
+    -> s_value INT DEFAULT 0
+    -> )
+    -> ;
+Query OK, 0 rows affected (0.024 sec)
+
+MariaDB [workbook2]>
+MariaDB [workbook2]>
+MariaDB [workbook2]> ALTER TABLE
+    -> sales
+    -> ADD
+    -> PRIMARY KEY(s_id,s_date)
+    -> ;
+Query OK, 0 rows affected (0.049 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+MariaDB [workbook2]>
+MariaDB [workbook2]> show fields from books;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| isbn         | char(17)     | NO   | PRI | NULL    |       |
+| title        | varchar(255) | YES  |     | NULL    |       |
+| price        | int(11)      | YES  |     | NULL    |       |
+| publish      | varchar(30)  | YES  |     | NULL    |       |
+| publish_date | date         | YES  |     | NULL    |       |
+| category_id  | char(5)      | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+6 rows in set (0.026 sec)
+

@@ -1,0 +1,35 @@
+クエリ
+
+CREATE INDEX
+	ind_order
+ON
+	order_main
+	(
+		order_date,
+		delivery_date
+	)
+;
+
+実行結果
+
+MariaDB [workbook]> CREATE INDEX
+    -> ind_order
+    -> ON
+    -> order_main
+    -> (
+    -> order_date,
+    -> delivery_date
+    -> )
+    -> ;
+Query OK, 0 rows affected (0.042 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [workbook]> show index from order_main;
++------------+------------+-----------+--------------+---------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table      | Non_unique | Key_name  | Seq_in_index | Column_name   | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++------------+------------+-----------+--------------+---------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| order_main |          0 | PRIMARY   |            1 | po_id         | A         |          20 |     NULL | NULL   |      | BTREE      |         |               |
+| order_main |          1 | ind_order |            1 | order_date    | A         |          20 |     NULL | NULL   | YES  | BTREE      |         |               |
+| order_main |          1 | ind_order |            2 | delivery_date | A         |          20 |     NULL | NULL   | YES  | BTREE      |         |               |
++------------+------------+-----------+--------------+---------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+3 rows in set (0.001 sec)

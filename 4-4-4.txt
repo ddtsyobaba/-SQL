@@ -1,0 +1,33 @@
+クエリ
+
+ALTER TABLE
+	access_log
+MODIFY
+	referer VARCHAR(200) NULL
+;
+
+修正点
+①3行目をMODIFYに修正しました。
+②4行目の,を削除しました。
+
+実行結果
+
+MariaDB [workbook]> ALTER TABLE
+    -> access_log
+    -> MODIFY
+    -> referer VARCHAR(200) NULL
+    -> ;
+Query OK, 126 rows affected (0.064 sec)
+Records: 126  Duplicates: 0  Warnings: 0
+
+MariaDB [workbook]> show fields from access_log;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| log_id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| page_id     | char(5)      | YES  |     | NULL    |                |
+| referer     | varchar(200) | YES  |     | NULL    |                |
+| ip_address  | char(15)     | YES  |     | NULL    |                |
+| access_date | datetime     | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.023 sec)

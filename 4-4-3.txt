@@ -1,0 +1,29 @@
+クエリ
+
+ALTER TABLE
+	author
+MODIFY
+	name VARCHAR(100) DEFAULT ''
+;
+
+実行結果
+
+MariaDB [workbook]> ALTER TABLE
+    -> author
+    -> MODIFY
+    -> name VARCHAR(100) DEFAULT ''
+    -> ;
+Query OK, 0 rows affected (0.018 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [workbook]> show fields from author;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| author_id | char(5)      | NO   | PRI |         |       |
+| name      | varchar(100) | YES  |     |         |       |
+| name_kana | varchar(100) | YES  |     | NULL    |       |
+| birth     | date         | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.023 sec)
+

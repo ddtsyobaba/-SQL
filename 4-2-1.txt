@@ -1,0 +1,34 @@
+クエリ
+
+CREATE INDEX
+	ind_rental
+ON
+	rental
+	(
+		rental_date
+	)
+;
+
+実行結果
+
+MariaDB [workbook]> CREATE INDEX
+    -> ind_rental
+    -> ON
+    -> rental
+    -> (
+    -> rental_date
+    -> )
+    -> ;
+Query OK, 0 rows affected (0.025 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [workbook]>
+MariaDB [workbook]>
+MariaDB [workbook]> show index from rental;
++--------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table  | Non_unique | Key_name   | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++--------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| rental |          0 | PRIMARY    |            1 | id          | A         |          25 |     NULL | NULL   |      | BTREE      |         |               |
+| rental |          1 | ind_rental |            1 | rental_date | A         |          25 |     NULL | NULL   | YES  | BTREE      |         |               |
++--------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+2 rows in set (0.001 sec)

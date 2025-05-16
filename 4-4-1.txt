@@ -1,0 +1,31 @@
+クエリ
+
+ALTER TABLE
+	books
+MODIFY
+	publish VARCHAR(100) NULL
+;
+
+実行結果
+
+MariaDB [workbook]> ALTER TABLE
+    -> books
+    -> MODIFY
+    -> publish VARCHAR(100) NULL
+    -> ;
+Query OK, 0 rows affected (0.019 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [workbook]> show fields from books;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| isbn         | char(17)     | NO   | PRI |         |       |
+| title        | varchar(255) | YES  |     | NULL    |       |
+| price        | int(11)      | YES  |     | NULL    |       |
+| publish      | varchar(100) | YES  |     | NULL    |       |
+| publish_date | date         | YES  |     | NULL    |       |
+| category_id  | char(5)      | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+6 rows in set (0.023 sec)
+
